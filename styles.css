@@ -568,6 +568,15 @@ footer a:hover {
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+   .sender-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .sender-info input {
+    width: 100%;
+  }
 }
 @media (max-width: 480px) {
   header h1 {
@@ -637,6 +646,7 @@ footer a:hover {
   .contact-text span {
     text-align: center;
   }
+
   footer {
     padding: 20px;  
   } 
