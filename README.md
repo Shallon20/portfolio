@@ -12,7 +12,7 @@ Contact section
 - CSS3 (Flexbox, Grid, Custom Properties, Transitions)
 
 ## Live Preview
-''
+'https://opmc.lv/'
 ## How to Use
 
 1. Clone the repository into VS code:
