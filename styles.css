@@ -10,7 +10,6 @@ body {
 }
 header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -19,16 +18,28 @@ header {
   z-index: 1000;
   background-color: #333333;
   color: #ffffff;
-  padding: 20px;
+  padding: 10px 20px;
 }
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
 header h1 {
   font-size: 2em;
   font-weight: 700;
+  margin: 0;
 }
 header h1 span {
   color: #f7b707;
 }
 /* Navigation styles */
+.nav-menu {
+  width: 100%;
+}
 nav ul {
   list-style: none;
   padding: 0;
@@ -44,6 +55,18 @@ nav ul li a {
 nav ul li a:hover {
   color: #f7b707;
 }
+/* Hamburger Icon (Mobile) */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
 
 /* Home Section */
 #home-section {
@@ -114,14 +137,6 @@ nav ul li a:hover {
 
 .custom-shape-divider-bottom-1753954138 .shape-fill {
   fill: #333333;
-}
-
-/** For mobile devices **/
-@media (max-width: 767px) {
-  .custom-shape-divider-bottom-1753954138 svg {
-    width: calc(181% + 1.3px);
-    height: 35px;
-  }
 }
 
 /* About Section */
@@ -237,8 +252,6 @@ nav ul li a:hover {
   color: #333;
   display: block;
 }
-
-
 
 /* Projects Section */
 #projects-section {
@@ -439,13 +452,49 @@ footer a:hover {
 /* Responsive styles */
 @media (max-width: 768px) {
   header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    }
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+  }
+  .nav-menu ul {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    padding: 15px 20px;
+  }
+  .nav-menu ul li {
+    margin: 10px 0;
+    text-align: left;
+  }
+  #menu-toggle {
+    display: none;
+  }
+  #menu-toggle:checked + .menu-icon + .nav-menu {
+    display: block;
   }
   #home-section {
     flex-direction: column;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
+  }
+  .custom-shape-divider-bottom-1753954138 svg {
+    width: calc(181% + 1.3px);
+    height: 35px;
   }
   #about-section {
     flex-direction: column;
@@ -464,6 +513,9 @@ footer a:hover {
   .project-card {
     margin: 0 auto;
     width: 90%;
+  }
+  #contact-section {
+    margin: 20px;
   }
   .contact-form {
     flex-direction: column;
@@ -557,9 +609,15 @@ footer a:hover {
   .project-content ul {
     font-size: 0.8em;
   }
+  #contact-section {
+    padding: 20px;
+  }
   .contact-form {
     flex-direction: column;
     align-items: center;
+  }
+  .contact-details{
+    margin-top: 30px;
   }
   form {
     width: 100%;
