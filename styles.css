@@ -179,7 +179,64 @@ nav ul li a:hover {
   padding: 20px;
   background-color: #ffffff;
 }
-
+.skills-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0 5
+  0px;
+  
+}
+.circular-skill {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.circular-skill h4 {
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+/*SVG Circle Progress Bar*/
+.progress-circle {
+  width: 120px;
+  height: 120px;
+}
+.progress-circle circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+.progress-circle .bg {
+  stroke: #e6e6e6;
+}
+/* Foreground progress circle */
+.progress-circle .progress {
+  stroke: #e0d69c;
+  stroke-dasharray: 282.6;
+  stroke-dashoffset: calc(282.6 - (282.6 * var(--percent)) / 100);
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dashoffset 1s ease-out;
+}
+/* Center percentage text */
+.percentage {
+  font-size: 18px;
+  fill: #333;
+  font-weight: bold;
+}
+.circular-skill:hover .progress {
+  stroke: #f3a805;
+  stroke-dashoffset: calc(282.6 - (282.6 * var(--percent)) / 100);
+}
+.skill-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+  display: block;
+}
 
 
 
@@ -478,6 +535,7 @@ footer a:hover {
   #skills-section {
     padding: 20px;
   }
+
   #projects-section {
     padding: 20px;
   }
