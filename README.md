@@ -19,7 +19,7 @@ Contact section
    ```bash
    https://github.com/Shallon20/portfolio.git
 2. Navigate to the project directory
-  ``` bash 
+  ```bash 
   cd your-repo-name
-    
+
 3. Open with live server to view or just use the website link.
